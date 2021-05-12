@@ -1,4 +1,4 @@
-- name: Image copy registry
+- name: Image_copy_registry
   uses: ./ # Uses an action in the root directory
   id: imagecopy
   with:
