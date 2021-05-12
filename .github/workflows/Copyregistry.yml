@@ -1,0 +1,8 @@
+- name: Image copy registry
+  uses: ./ # Uses an action in the root directory
+  id: imagecopy
+  with:
+    source_registry: soruceregistry.io
+    destination_registry: harbor.io
+    destination_registry_username: test
+    destination_registry_password: test

@@ -1,0 +1,31 @@
+# action.yaml
+name: 'My Custom Github Action'
+description: 'Copy docker images from one register to another'
+inputs:
+  source_registry:
+    description: 'docker.io/library/nginx:1.20-alpine'
+    required: true
+    default: 1
+  destination_registry:
+    description: 'https://goharbor.io/test-repo/nginx-alpine-perl'
+    required: true
+    default: 1
+  destination_registry_username:
+    description: 'registry usernmae'
+    required: true
+    default: 1
+  destination_registry_password:
+    description: 'registry password'
+    required: true
+    default: 1  
+outputs:
+  result:
+    description: 'Image copy status'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.source_registry}}
+    - ${{ inputs.destination_registry}}
+    - ${{ inputs.destination_registry_username}}
+    - ${{ inputs.destination_registry_password}}
